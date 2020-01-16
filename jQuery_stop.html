@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery stop()方法示例</title>
+
+  <style>
+    #tip{
+    width:50px;
+    height:50px;
+    background-color:orange;
+    }
+  </style>
+
+  <script src="js/jquery.min.js"></script>
+</head>
+<body>
+    <div id="tip"></div>
+
+    <!-- 停止动画的按钮 -->
+    <button id="stop">停止动画</button>
+    <button id="stop2">允许完成动画后停止动画</button>
+
+    <script >
+        //给#tip添加动画效果,四个改变长宽的animate动画
+        $("#tip").animate({
+            'width':'100px'
+        },2000)
+        $("#tip").animate({
+            'height':'100px'
+        },2000)
+        $("#tip").animate({
+            'width':'20px'
+        },2000)
+        $("#tip").animate({
+            'height':'20px'
+        },2000)
+
+        $("#stop").on("click",function(){
+            //停止元素全部的动画操作
+            //$(selector).stop(stopAll,goToEnd)
+            $("#tip").stop(true);//第一个参数设为true时停止该元素的所有元素
+
+        })
+        $("stop").on("click",function(
+            //允许完成当前动画后再停止
+            $("#tip").stop(true,true)//写第二个参数要把第一个也写上
+        ))
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery hover方法使用</title>
+  <script src="js/jquery.min.js"></script>
+
+  <style>
+    /* 先设置图片样式为隐藏 */
+    #img{
+        display: none;
+    }
+  </style>
+</head>
+<body>
+    <a id="a1" href="">美女</a>
+    <div id="img">
+        <img src="images/img02-3.png" alt="">
+    </div>
+
+    <script >
+        //获取元素对象并保存在变量中
+        var $a1 = $("#a1");
+        var $img = $("#img");
+
+        //绑定a1的事件函数
+        //$(selector).hover(handlerIn,handlerOut)
+        $a1.hover(function(){
+            //当鼠标移到$a1上面显示图片
+            $img.fadeIn(2000);
+        },function(){
+            //当鼠标移出$a1淡隐图片
+           $img.fadeOut(2000);
+        })
+    </script>
+</body>
+</html>
